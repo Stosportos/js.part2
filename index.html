@@ -1,18 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>eShop</title>
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="chat.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 <body>
-   <header>
-       <button class="cart-button" type="button">Корзина</button>
-   </header>
-   <main>
-       <div class="goods-list"></div>
-   </main>
-   <script src="index.js"></script>
+<header class="header">
+    <button class="cart-button">Cart</button>
+</header>
+<main>
+    <div class="goods-list"></div>
+    <div class="totalSum"></div>
+    <div class ="cart-bck hidden">
+        <div class="cart">
+            <a href="#"><div class="cart-close">&#10006;</div></a>
+            <div class="cart-inner"></div>
+        </div>
+    </div>
+    <a href="#" class="chat-open">
+    <div class="chat-closed">Чат</div>
+    </a>
+    <div class="chat hidden">
+        <a href="#"><div class="chat-close">&#10006;</div></a>
+        <div class="chat-header">
+            <div class="consultant-photo"></div>
+            <h3 class="consultant-name"></h3>
+            <p class="consultant-p">Консультант</p>
+        </div>
+        <div class="chat-messages"></div>
+        <div class="user-message">
+            <textarea class="user-msg" placeholder="Введите сообщение и нажмите Enter"></textarea>
+            <button class="smiles-btn"></button>
+            <button class="attachfile-btn"></button>
+        </div>
+    </div>
+</main>
+<script src="index.js"></script>
 </body>
 </html>
