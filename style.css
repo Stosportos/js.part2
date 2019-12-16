@@ -18,133 +18,42 @@ header {
     margin-bottom: 30px;
 }
 
-.cart-button {
+.goods-button {
     -webkit-appearance: none;
     background-color:lightskyblue;
     border: none;
     color: white;
-    width: 100px;
-    height: 30px;
+    padding: 10px;
     border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.25), 0 3px 5px rgba(0,0,0,0.22);
+}
+
+.goods-button:active {
+    box-shadow: none;
 }
 
 .goods-list {
     padding: 20px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
-    margin: 0 auto;	
+    flex-wrap: wrap;
 }
 
-        .goods-item {
-            padding: 20px;
-            margin-left: 20px;
-            margin-bottom: 20px;
-            width: calc(100% / 3 - 60px);
-            background-color: #f1f1f1;
-            text-align: center;
-            height: fit-content;
-            flex-basis: 200px;
-            border: 1px solid lightskyblue;
-            border-radius: 4px;
-        }
-        .title {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .goods-title {
-            margin-bottom: 20px;
-        }
-        .goods-img{
-            width: 60%;
-            height: 70%;
-            margin-bottom: 20px;
-            outline: 1px solid lightskyblue;
-        }
-        .goods-btn{
-            -webkit-appearance: none;
-            border: none;
-            background-color: lightskyblue;
-            color: #ffffff;
-            border-radius: 4px;
-            padding: 5px 10px;
-            margin-top: 10px;
-            font-size: 12px;
-            box-shadow: 0 3px 5px rgba(0,0,0,0.25), 0 3px 5px rgba(0,0,0,0.22);
-        }
-        .goods-btn:active{
-            box-shadow: none;
-        }
-        .cart-bck{
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background: rgba(128, 128, 128, 0.5);
-            height: 100%;
-            width: 100%;
-        }
-        .cart{
-            position: relative;
-            padding: 5%;
-            background-color: white;
-            top: 10%;
-            left: 5%;
-            width: 80%;
-            border: 1px solid #999;
-        }
-        .hidden{
-            display: none;
-        }
-        .cart-table{
-            width: 100%;
-            text-align: center;
-        }
-        .cart-th{
-            padding: 5px;
-            width: calc(100% / 5);
-            overflow: hidden;
-            text-align: center;
-        }
-        .totalSum{
-            width: calc(100% - 40px);
-            height: 30px;
-            text-align: center;
-            display: block;
-            padding: 20px;
-        }
-        .cart-img{
-            width: 40px;
-            height: 40px;
-            margin: 5px;
-        }
-        .cart-sum{
-            margin: 20px;
-            text-align: right;
-        }
-        .cart-inner{
-            width: 100%;
-            height: 100%;
-            padding: 10px;
-        }
-        .cart-close{
-            width: 20px;
-            height: 20px;
-            font-size: 18px;
-            line-height: 20px;
-            position: absolute;
-            top: -7px;
-            right: -7px;
-            border-radius: 50%;
-            background-color: gray;
-            color: white;
-            text-align: center;
-        }
-        .inc-good, .dec-good{
-            width: 15px;
-            height: 15px;
-            font-size: 15px;
-            text-align: center;
-            padding: 0px;
-            border-radius: 1px;
-            line-height: 8px;
-        }
+.goods-item {
+    width: calc(100%/2 - 60px);
+    height: 100px;
+    border: 2px solid black;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.goods-title {
+    font-size: 14px;
+    padding: 5px;
+}
+
+.goods-price {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+}
