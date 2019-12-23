@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 20px;
+        }
+        .userdata{
+            border: 2px solid #ccc;
+            padding: 20px;
+            width: 500px;
+        }
+        .inputfield{
+            margin: 10px 0px;
+            padding: 5px;
+        }
+        .errclass{
+            padding-left: 10px;
+            color: red;
+            display: inline-block;
+            font-size: 12px;
+        }
+        .redBorder{
+            border: 1px solid red;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<form action="" class="userdata">
+    <label for="name" class="lbl">Имя: </label><br>
+    <input type="text" id="name" class="inputfield">
+    <div class="nameError errclass hidden"> Имя должно содержать только буквы</div><br>
+    <label for="phone" class="lbl">Телефон: </label><br>
+    <input type="text" id="phone" class="inputfield">
+    <div class="phoneError errclass hidden"> Телефон имеет вид +7(000)000-0000</div><br>
+    <label for="email" class="lbl">E-mail: </label><br>
+    <input type="text" id="email" class="inputfield">
+    <div class="emailError errclass hidden"> E-mail имеет вид mymail@mail.ru, или my.mail@mail.ru или my-mail@mail.ru </div><br>
+    <label for="text" class="lbl">текст: </label><br>
+    <textarea name="text" id="text" cols="30" rows="10" class="inputfield"></textarea>
+    <div class="textError errclass hidden"> Текст произвольный</div><br>
+    <button class="sendBtn">Отправить</button>
+</form>
+<script src="main_two.js"></script>
+</body>
+</html>
