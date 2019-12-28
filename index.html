@@ -14,14 +14,16 @@
 <body>
     <div id="app">
         <header class="header">
-            <form class="search-form" @submit.prevent>
+            <search :search-line.sync="searchLine"></search>
+            <!--<form class="search-form" @submit.prevent>
                 <input type="text" class="goods-search" v-model.trim="searchLine" />
                 <button class="search-button" type="button">Искать</button>
-            </form>
+            </form>-->
             <button class="cart-button" @click="toggleCart">Корзина</button>
-            <div class="cart-container" v-if="isVisibleCart">
+            <cart ref="cart"></cart>
+            <!--<div class="cart-container" v-if="isVisibleCart">
                 <a href="#" @click="hideCart"><div class="cart-close"><img src="img/icons/close.svg" alt=""></div></a>
-            </div>
+            </div>-->
         </header>
         <main>
             <goods-list :goods="filteredGoods"></goods-list>

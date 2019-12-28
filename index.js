@@ -3,6 +3,28 @@
 const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 const cart = [];
 
+Vue.component('search', {
+    props: {
+        searchLine: {
+            type: String,
+            required: false,
+            default: '',
+        }
+    },
+    template: `
+      <form class="search-form" @submit.prevent>
+        <input type="text" class="search-input" :value="searchLine"
+          @input="updateSearchLine"/>
+      </form>
+  `,
+    methods: {
+        updateSearchLine(val) {
+            const value = val.target.value;
+            this.$emit('update:searchLine', value);
+        }
+    }
+});
+
 Vue.component('goodsItem', {
     props: ['good'],
     template: `
@@ -30,6 +52,28 @@ Vue.component('goodsList', {
             return this.goods.length === 0;
         },
     },
+});
+
+Vue.component('cart', {
+    data: () => ({
+        cart,
+        isVisibleCart: false,
+    }),
+    methods: {
+        toggleVisibility() {
+            this.isVisibleCart = !this.isVisibleCart;
+        }
+    },
+    template: `
+    <div class="cart-container" v-if="isVisibleCart">
+      <a href="#" @click="hideCart"><div class="cart-close"><img src="img/icons/close.svg" alt=""></div></a>
+      <ul>
+        <li v-for="good in cart">
+           {{good.product_name}}
+        </li>
+      </ul>
+    </div>
+  `
 });
 
 /*Vue.component('cart-container', {
@@ -105,7 +149,7 @@ const app = new Vue ({
             })
         },
         toggleCart() {
-            this.isVisibleCart = !this.isVisibleCart;
+            this.$refs.cart.toggleVisibility();
         },
     },
     computed: {
