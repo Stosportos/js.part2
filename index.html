@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>eShop</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="widgets/chat/chat.css">
+    <link rel="stylesheet" href="widgets/cart/cart_style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <search :search-line.sync="searchLine"></search>
+            <!--<form class="search-form" @submit.prevent>
+                <input type="text" class="goods-search" v-model.trim="searchLine" />
+                <button class="search-button" type="button">Искать</button>
+            </form>-->
+            <button class="cart-button" @click="toggleCart">Корзина</button>
+            <cart ref="cart"></cart>
+            <!--<div class="cart-container" v-if="isVisibleCart">
+                <a href="#" @click="hideCart"><div class="cart-close"><img src="img/icons/close.svg" alt=""></div></a>
+            </div>-->
+        </header>
+        <main>
+            <goods-list :goods="filteredGoods"></goods-list>
+        </main>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+<script src="widgets/chat/main.js"></script>
+
+
+</body>
+</html>
